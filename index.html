@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Home page</title>
-    <script type="text/javascript" src="index.js"></script>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="login.js"></script>
+    <style>
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 350px; padding: 20px; }
+    </style>
 </head>
-
 <body>
-    <div>
-        <h1>Home</h1>
-    </div>
+<div class="wrapper">
+    <h2>Login</h2>
+    <p>Please fill in your credentials to login.</p>
 
-    <div id="loginDiv">
-        <input type="text" id="username" name="user_name" placeholder="Your username" required />
-        <input type="password" id="password" name="user_password" placeholder="Your password" required />
-        <button type="button" onclick="login()">Login</button>
-    </div>
+<form>
+<div class="form-group">
+    <label>Username</label>
+    <input type="text" name="username" class="form-control">
+    <span class="invalid-feedback"><?php echo $username_err; ?></span>
+</div>
+<div class="form-group">
+    <label>Password</label>
+    <input type="password" name="password" class="form-control">
+    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+</div>
+<div class="form-group">
+    <input type="submit" class="btn btn-primary" value="Login">
 
-    <div id="mainDiv" style="display: none">
-        <button type="button" onclick="logout()">Logout</button>
-        <h3>Create New Event</h3>
-        <button type="button">New</button>
-        <h3>View Events</h3>
-        <button type="button" onclick="viewEvents()">
-            View Events
-        </button>
-    </div>
+</div>
+</form>
+</div>
 </body>
-
 </html>

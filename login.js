@@ -1,6 +1,8 @@
-$.get('view_events.php', function (data) {
-    $('#preTag').text(data);
+$( "form" ).submit(function( event ) {
+    console.log( $( this ).serializeArray() );
+    event.preventDefault();
 });
+$.post( "login.php", { username: "", password: "" } );
 
 
 

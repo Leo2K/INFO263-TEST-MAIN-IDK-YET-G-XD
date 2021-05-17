@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     return;
 }
 
-function login($conn, $username, $password) {
+function login($conn) {
     $query = "select username, password from user where username = '{$username}'  and password = '{$password}'";
     $result = mysqli_query($conn, $query);
     $results = $result->fetch_array(MYSQLI_ASSOC);
@@ -23,6 +23,6 @@ function login($conn, $username, $password) {
     return false;
 
 }
-echo login($conn, $username, $password);
+echo login($conn);
 
 ?>

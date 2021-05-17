@@ -1,4 +1,6 @@
 // This is where your client side code will go for the index.html page
+console.log($('form').serializeArray());
+$.post( "login.php", { username: "", password: "" } );
 
 function login() {
     hideElement("loginDiv")
